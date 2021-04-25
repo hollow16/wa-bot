@@ -320,8 +320,8 @@ Ketik ${prefix}verify untuk memulai menggunakan bot.`
             const isCmd = body.startsWith(prefix)
             const is = budy.slice(0).trim().split(/ +/).shift().toLowerCase()
             mess = {
-                wait: '*☐* Silahkan tunggu',
-                success: '*☉* Berhasil',
+                wait: '*☐* Espere por favor',
+                success: '*☉* Funciona',
                 Public: '*☒* fitur dalam mode private sekarang hanya owner yang dapat menggunakan bot',
                 ferr: 'Maaf sepertinya fitur sedang Error',
                 limitend: 'Maaf limit kamu telah habis, silahkan lakukan pembelian ulang.',
@@ -743,8 +743,9 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     break
 
                     //--arti nama
+                    /* 
                 case 'arti':
-                    if (args.length < 1) return reply('*☒* Masukan teks')
+                    if (args.length < 1) return reply('*☒* Ingrese texto')
                     Lxa.updatePresence(from, Presence.composing)
                     if (!isRegister) return reply(mess.only.daftarB)
                     teks = body.slice(6)
@@ -757,12 +758,14 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
+                    */
 
                     //---couple pasangan
+                    /*
                 case 'couple':
                     Lxa.updatePresence(from, Presence.composing)
                     if (!isRegister) return reply(mess.only.daftarB)
-                    if (!q.includes(' & ')) return reply('Maaf format teks salah')
+                    if (!q.includes(' & ')) return reply('Lo sentimos, el formato de texto es incorrecto')
                     const aku = q.substring(0, q.indexOf(' &') - 0)
                     const kamu = q.substring(q.lastIndexOf('& ') + 1)
                     try {
@@ -781,8 +784,9 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
-
+                    */
                     //---Zodiak harian
+                    /*
                 case 'zodiak':
                     if (args.length < 1) return reply('*☒* Masukan nama zodiak')
                     Lxa.updatePresence(from, Presence.composing)
@@ -797,7 +801,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
-
+                    */
                     //--pencarian pinterest
                 case 'img':
                     if (!isRegister) return reply(mess.only.daftarB)
@@ -876,7 +880,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         pok = await getBuffer(nimek)
                         Lxa.sendMessage(from, pok, image, {
                             quoted: mek,
-                            caption: `Ini ?`
+                            caption: `(=◕ᆽ◕ฺ=)`
                         })
 
                     } catch {
@@ -958,7 +962,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     pok = await getBuffer(nimek)
                     Lxa.sendMessage(from, pok, image, {
                         quoted: mek,
-                        caption: `wah wibu lu !`
+                        caption: `＼(≧▽≦)／`
                     })
 
                     break
@@ -994,7 +998,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     break
 
                     //--Pinterest cecan
-                case 'cecan':
+                case 'realwaifu':
                     if (!isRegister) return reply(mess.only.daftarB)
 
                     tels = body.slice(5)
@@ -1026,6 +1030,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     break
 
                     //--Pinterest quotes
+                    /*
                 case 'quotes':
                     if (!isRegister) return reply(mess.only.daftarB)
 
@@ -1052,34 +1057,35 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
-
+                    */
 
 
                     //--Pinterest cogan
-                case 'cogan':
-                    if (!isRegister) return reply(mess.only.daftarB)
+                    /*
+                    case 'cogan':
+                        if (!isRegister) return reply(mess.only.daftarB)
 
-                    Lxa.updatePresence(from, Presence.composing)
-                    uk = ["ulzhang boy", "cowok keren", "cowo ganteng", "cogan", "cogan jawa"]
-                    nk = uk[Math.floor(Math.random() * uk.length)]
-                    try {
-                        data = await fetchJson(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
-                            method: 'get'
-                        })
-                        reply(mess.wait)
-                        n = JSON.parse(JSON.stringify(data));
-                        nimek = n[Math.floor(Math.random() * n.length)];
-                        pok = await getBuffer(nimek)
-                        Lxa.sendMessage(from, pok, image, {
-                            quoted: mek,
-                            caption: `Wah ganteng kek gua`
-                        })
+                        Lxa.updatePresence(from, Presence.composing)
+                        uk = ["ulzhang boy", "cowok keren", "cowo ganteng", "cogan", "cogan jawa"]
+                        nk = uk[Math.floor(Math.random() * uk.length)]
+                        try {
+                            data = await fetchJson(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
+                                method: 'get'
+                            })
+                            reply(mess.wait)
+                            n = JSON.parse(JSON.stringify(data));
+                            nimek = n[Math.floor(Math.random() * n.length)];
+                            pok = await getBuffer(nimek)
+                            Lxa.sendMessage(from, pok, image, {
+                                quoted: mek,
+                                caption: `Wah ganteng kek gua`
+                            })
 
-                    } catch {
-                        reply(mess.ferr)
-                    }
-                    break
-
+                        } catch {
+                            reply(mess.ferr)
+                        }
+                        break
+                        */
                     //--Pinterest cyberpunk
                 case 'cyberpunk':
                     if (!isRegister) return reply(mess.only.daftarB)
@@ -1103,51 +1109,51 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
+                    /*
+                    case 'jadian':
+                        if (!isRegister) return reply(mess.only.daftarB)
 
-                case 'jadian':
-                    if (!isRegister) return reply(mess.only.daftarB)
-
-                    if (args.length < 1) return Lxa.sendMessage(from, `Masukan tanggal-bulan-tahun`, text, {
-                        quoted: mek
-                    })
-                    if (!q.includes('-')) return reply('Masukan tanggal-bulan-tahun dengan benar\n*Contoh : 09-09-2009*')
-                    pc = body.slice(9)
-                    teks1 = pc.split("-")[0];
-                    teks2 = pc.split("-")[1];
-                    teks3 = pc.split("-")[2];
-                    reply(mess.wait)
-                    try {
-                        iya = await fetchJson(`http://lolhuman.herokuapp.com/api/jadian/${teks1}/${teks2}/${teks3}?apikey=${lolKey}`, {
-                            method: 'get'
-                        })
-                        hasil = `‣ *Karakteristik* : ${iya.result.karakteristik}\n‣ *Deskripsi* : ${iya.result.deskripsi}`
-                        Lxa.sendMessage(from, hasil, text, {
+                        if (args.length < 1) return Lxa.sendMessage(from, `Masukan tanggal-bulan-tahun`, text, {
                             quoted: mek
                         })
-
-                    } catch {
-                        reply(mess.ferr)
-                    }
-                    break
-
-
-                case 'asupan':
-
-                    if (!isRegister) return reply(mess.only.daftarB)
-                    try {
-                        data = await fetchJson(`https://api.itsmeikyxsec404.xyz/asupan?apikey=${meKey}`)
+                        if (!q.includes('-')) return reply('Masukan tanggal-bulan-tahun dengan benar\n*Contoh : 09-09-2009*')
+                        pc = body.slice(9)
+                        teks1 = pc.split("-")[0];
+                        teks2 = pc.split("-")[1];
+                        teks3 = pc.split("-")[2];
                         reply(mess.wait)
-                        hasil = await getBuffer(data.result)
-                        Lxa.sendMessage(from, hasil, video, {
-                            caption: 'Nih gan',
-                            quoted: mek
-                        })
+                        try {
+                            iya = await fetchJson(`http://lolhuman.herokuapp.com/api/jadian/${teks1}/${teks2}/${teks3}?apikey=${lolKey}`, {
+                                method: 'get'
+                            })
+                            hasil = `‣ *Karakteristik* : ${iya.result.karakteristik}\n‣ *Deskripsi* : ${iya.result.deskripsi}`
+                            Lxa.sendMessage(from, hasil, text, {
+                                quoted: mek
+                            })
 
-                    } catch {
-                        reply(mess.ferr)
-                    }
-                    break
+                        } catch {
+                            reply(mess.ferr)
+                        }
+                        break
+                      */
+                    /*
+                    case 'asupan':
 
+                        if (!isRegister) return reply(mess.only.daftarB)
+                        try {
+                            data = await fetchJson(`https://api.itsmeikyxsec404.xyz/asupan?apikey=${meKey}`)
+                            reply(mess.wait)
+                            hasil = await getBuffer(data.result)
+                            Lxa.sendMessage(from, hasil, video, {
+                                caption: 'Nih gan',
+                                quoted: mek
+                            })
+
+                        } catch {
+                            reply(mess.ferr)
+                        }
+                        break
+                        
                 case 'weton':
                     if (!isRegister) return reply(mess.only.daftarB)
 
@@ -1172,7 +1178,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
-
+                    */
                 case 'seberapagay':
                     if (!isRegister) return reply(mess.only.daftarB)
 
@@ -1338,7 +1344,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
-
+                    /*
                 case 'textgen':
                     teks = body.slice(9)
                     if (args.length < 1) return reply('*☒* Masukan teks')
@@ -1353,7 +1359,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
-
+                  */
 
                 case 'kusonime':
                     teks = body.slice(6)
@@ -1374,28 +1380,28 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                         reply(mess.ferr)
                     }
                     break
+                    /*
+                    case 'igstalk':
+                        yolo = body.slice(9)
+                        if (!isRegister) return reply(mess.only.daftarB)
 
-                case 'igstalk':
-                    yolo = body.slice(9)
-                    if (!isRegister) return reply(mess.only.daftarB)
+                        if (args.length < 1) return reply('*☒* Masukan username')
+                        try {
+                            hmm = await fetchJson(`http://lolhuman.herokuapp.com/api/stalkig/${yolo}?apikey=${lolKey}`)
+                            reply(mess.wait)
+                            buffer = await getBuffer(hmm.result.photo_profile)
+                            hasil = `‣ *Username* : ${hmm.result.username}\n‣ *Fullname* : ${hmm.result.fullname}\n‣ *Pengikut* : ${hmm.result.followers}\n‣ *Mengikuti* : ${hmm.result.following}\n‣ *Bio* : ${hmm.result.bio}\n‣ *Link* : https://www.instagram.com/${hmm.result.username}\n‣ Follow : ${Ig}`
+                            Lxa.sendMessage(from, buffer, image, {
+                                quoted: mek,
+                                caption: hasil
+                            })
 
-                    if (args.length < 1) return reply('*☒* Masukan username')
-                    try {
-                        hmm = await fetchJson(`http://lolhuman.herokuapp.com/api/stalkig/${yolo}?apikey=${lolKey}`)
-                        reply(mess.wait)
-                        buffer = await getBuffer(hmm.result.photo_profile)
-                        hasil = `‣ *Username* : ${hmm.result.username}\n‣ *Fullname* : ${hmm.result.fullname}\n‣ *Pengikut* : ${hmm.result.followers}\n‣ *Mengikuti* : ${hmm.result.following}\n‣ *Bio* : ${hmm.result.bio}\n‣ *Link* : https://www.instagram.com/${hmm.result.username}\n‣ Follow : ${Ig}`
-                        Lxa.sendMessage(from, buffer, image, {
-                            quoted: mek,
-                            caption: hasil
-                        })
-
-                    } catch {
-                        reply(mess.ferr)
-                    }
-                    break
-
-
+                        } catch {
+                            reply(mess.ferr)
+                        }
+                        break
+                    */
+                    /*
                 case 'apakah':
                     if (args.length < 1) return reply('*☒* Masukan pertanyaan')
                     Lxa.updatePresence(from, Presence.composing)
@@ -1403,7 +1409,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     hasil = `Apakah : *${body.slice(8)}*\n\nJawaban : *${random}*`
                     reply(hasil)
                     break
-
+                    */
                     //bisakah
                 case 'bisakah':
                     if (args.length < 1) return reply('*☒* Masukan pertanyaan')
@@ -1575,14 +1581,16 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     break
 
                     //--list kodebahasa
-                case 'kodebahasa':
-                    Lxa.sendMessage(from, bahasa(prefix, sender), text, {
-                        quoted: mek
-                    })
-                    break
+                    /*
+                    case 'kodebahasa':
+                        Lxa.sendMessage(from, bahasa(prefix, sender), text, {
+                            quoted: mek
+                        })
+                        break
+                    */
 
                     //--list kode negara
-                case 'kodenegara':
+                case 'prefijopais':
                     Lxa.sendMessage(from, negara(prefix, sender), text, {
                         quoted: mek
                     })
@@ -1593,7 +1601,7 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                 case 'wame':
                     Lxa.updatePresence(from, Presence.composing)
                     options = {
-                        text: `Link WhatsApp-Mu : *wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*Or ( / )*\n*api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+                        text: `Link WhatsApp : *wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*o ( / )*\n*api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
                         contextInfo: {
                             mentionedJid: [sender]
                         }
@@ -1871,10 +1879,10 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                     break
 
                     //--tagme
-                case 'tagme':
+                case 'etiquetame':
                     if (!isRegister) return reply(mess.only.daftarB)
                     const tagme = {
-                        text: `@${sender.split("@")[0]} Hai kak`,
+                        text: `@${sender.split("@")[0]} holi ^•^`,
                         contextInfo: {
                             mentionedJid: [sender]
                         }
@@ -3351,18 +3359,18 @@ _“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). J
                 case 'verify':
                 case 'daftar':
                 case 'register':
-                    if (isRegister) return reply('Akun kamu sudah terverfikasi')
+                    if (isRegister) return reply('Tu cuenta ya ha sido verificada')
                     const namaUser = `${pushname}`
                     const umurUser = `${sender}`
                     const serialUser = createSerial(20)
                     veri = sender
                     if (isGroup) {
                         addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
-                        hasil = `〘  *Verifikasi* 〙
-Kode : *${serialUser}*
+                        hasil = `〘  *Verificado* 〙
+Código : *${serialUser}*
 ╔════════════════════
-╠≽️ *Nama* : *${namaUser}*
-╠≽️ *Nomor* : *${sender.split("@")[0]}*
+╠≽️ *Nombre* : *${namaUser}*
+╠≽️ *Número* : *${sender.split("@")[0]}*
 ╚════════════════════`
                         reply(hasil)
                         console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
@@ -3545,7 +3553,7 @@ Kode : *${serialUser}*
 
                 default:
                     if (body.startsWith(`${prefix}${command}`)) {
-                        reply(`        ────────────────\nHei *${pushname}* !!!\nPerintah/Command : *${prefix}${command}*\nTidak ada dalam *${prefix}Menu*\n        ────────────────`)
+                        reply(`        ────────────────\nOye *${pushname}* !!!\nComandos : *${prefix}${command}*\nComando no encontrado*\n        ────────────────`)
                     }
                     if (isGroup && isSimi && budy != undefined) {
                         console.log(budy)
